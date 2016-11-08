@@ -1,5 +1,12 @@
-<p>This is the partial for view 2.</p>
-<p>
-  Showing of 'interpolate' filter:
-  {{ 'Current version is v%VERSION%.' | interpolate }}
-</p>
+<div ng-controller="View2Ctrl">
+    <h2>Parent State</h2>
+    <p>
+        Parent template `foo`: <span ng-bind="foo"></span>
+    </p>
+
+    <h2>Child State</h2>
+    <!-- Interpolate value of `foo` and pass to child directive -->
+    <p>
+        <child-directive-2 bar="{{ foo }}"></child-directive-2>
+    </p>
+</div>
