@@ -1,0 +1,12 @@
+<div ng-controller="View4Ctrl">
+    <h2>Parent State</h2>
+    <p>
+        Parent template `foo`: <span ng-click="foo()">Click me!</span>
+    </p>
+
+    <h2>Child State</h2>
+    <!-- very clear that bar is a parameter for child-directive that accepts something.. -->
+    <p>
+        Child template `bar`: <child-directive-4 bar="foo"></child-directive-4>
+    </p>
+</div>
