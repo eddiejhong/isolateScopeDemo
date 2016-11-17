@@ -2,29 +2,29 @@
 
 'use strict';
 
-angular.module('myApp.view4', ['ngRoute'])
+angular.module('myApp.view6', ['ngRoute'])
 
 .config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/view4', {
-    templateUrl: 'view4/view4.html',
-    controller: 'View4Ctrl'
+  $routeProvider.when('/view6', {
+    templateUrl: 'view6/view6.html',
+    controller: 'View6Ctrl'
   });
 }])
 
-.controller('View4Ctrl', ['$scope', function($scope) {
+.controller('View6Ctrl', ['$scope', function($scope) {
     $scope.foo = function() {
         console.log("I'm from the parent!");
     }
 }])
-.directive('childDirective4', function() {
+.directive('childDirective6', function() {
     return {
         restrict: 'E',
         scope: {
-            bar: '=' // Accept state/behavior from parent scope, set it to `bar`
+            bar: '<' // Accept state/behavior from parent scope, set it to `bar`
         },
         template: "<span ng-click='bar()'>Click me!</span>",
         controller: ['$scope', function($scope) {
-            // Attempt to change foo, observe that parent $scope.foo has changed
+            // Attempt to change foo, observe that it has no effect on the parent $scope.foo
             $scope.bar = function() {
                 console.log("I'm from the child!");
             }
